@@ -1,0 +1,41 @@
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     constructor(val = 0, next = null) {
+ *         this.val = val;
+ *         this.next = next;
+ *     }
+ * }
+ */
+class Solution {
+    /**
+     * @param {ListNode} head
+     * @return {boolean}
+     */
+    isPalindrome(head) {
+        const items = [];
+        
+
+        while(head) {
+            items.push(head.val)
+            head = head.next
+        }
+
+        let left = 0;
+        let right = items.length - 1;
+
+        
+        console.log({ left, right, items})
+        while(left < right) {
+            if(items[left] !== items[right]) {
+              return false;
+            }
+            
+            left++;
+            right--;
+        }
+
+
+        return true
+    }
+}
